@@ -17,25 +17,6 @@ import com.xanadu.skipwork.ui.theme.Beige
 import com.xanadu.skipwork.ui.theme.LightGray
 
 @Composable
-fun MenuButton(
-    text: String,
-    onClick: () -> Unit
-) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(48.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = LightGray,
-            contentColor = Beige
-        )
-    ) {
-        Text(text = text, fontSize = 14.sp)
-    }
-}
-
-@Composable
 fun BackButton(onClick: () -> Unit) {
     // Making it a fixed width so it doesn't take up the whole top bar
     Button(
@@ -49,5 +30,26 @@ fun BackButton(onClick: () -> Unit) {
         )
     ) {
         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+    }
+}
+
+@Composable
+fun MenuButton(
+    text: String,
+    onClick: () -> Unit,
+    isIcon: Boolean = false // Add this line back
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(48.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = LightGray,
+            contentColor = Beige
+        )
+    ) {
+        // You can use isIcon here later to add an Icon() next to the Text()
+        Text(text = text, fontSize = 14.sp)
     }
 }
