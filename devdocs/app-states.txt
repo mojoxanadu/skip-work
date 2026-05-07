@@ -1,0 +1,46 @@
+Screens, transitions, and application states for Skip Work game.
+
+1. APP_LOADING
+As app is launching, fade in the logo (empty office chair in app/src/main/res/drawable/logo_office_chair.png) over a black screen with "Loading..." text in beige centered under chair. When loading completes, chair slides left to make room for two column home layout.
+
+2. MAIN_MENU
+For now just chair logo on left and a column of buttons on right. Clicking a button transitions to the layout indicated:
+1. APP_LOADING
+As app is launching, fade in the logo (empty office chair in app/src/main/res/drawable/logo_office_chair.png) over a black screen with "Loading..." text in beige centered under chair. When loading completes, chair slides left to make room for two column home layout.
+
+2. MAIN_MENU
+For now just chair logo on left and a column of buttons on right. Clicking a button transitions to the layout indicated:
+"Start Over": Goes to START_OVER_CONFIRM state instantly, by blurring/dimming home screen and displaying a vonfirmation "dialog" (see #3).
+"Play" (or "Continue"): The label of this varies depending on global game state. It always takes player to FLOOR_LOADING state, transition is slide to left.
+"Help" (should be ? icon not text label on button): go to HELP by sliding left.
+"Credits": go to CREDITS by sliding left.
+"Settings" (should be gear icon not text label on button): go to SETTINGS by sliding left.
+"Store": This button is always displayed as a stack of coins to left of a comma separated integer number of credits the player has earned. Transitions to STORE by sliding to left.
+
+3. START_OVER_CONFIRM
+Just a dialog, "Are you sure you want to start over from the ground floor? All your progress will be lost. (You keep your credits though.)" with "Cancel" and "Start Over" buttons.
+"Cancel": instantly return to MAIN_MENU.
+"Start Over": FLOOR_LOADING by sliding left.
+
+4. HELP
+For now just a left arrow which goes to MAIN_MENU by sliding right.
+
+5. CREDITS
+For now just a left arrow which goes to MAIN_MENU by sliding right.
+
+6. FLOOR_LOADING
+This will eventually show a cheap office clock but for now just a beige background with a 3 second countdown and "Get ready!" text. Then after the countdown a 1 second cross fade to GAME_ACTIVE.
+
+7. GAME_ACTIVE
+For now these buttons:
+"Quit": transition to LOST_LIFE by blurring/dimming game layout and showing small dialog (see #8).
+
+8. LOST_LIFE
+Text varies but for now just "Aww!" and a button "OK". Pressing goes to STORE by sliding right.
+
+9. STORE
+Just these buttons:
+"Home": MAIN_MENU by sliding right.
+"Continue": FLOOR_LOADING by sliding left.
+
+10. SETTINGS. For now just a left arrow which goes to MAIN_MENU by sliding right.
