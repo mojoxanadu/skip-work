@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.xanadu.skipwork.ui.components.MenuButton
+import com.xanadu.skipwork.ui.components.BackButton
 import com.xanadu.skipwork.ui.theme.Beige
 import com.xanadu.skipwork.ui.theme.LightGray
 
@@ -62,21 +64,5 @@ fun SettingsScreen(onBack: () -> Unit) {
         BackButton(onClick = onBack)
         Text(text = "Settings", color = Beige, fontSize = 24.sp)
         // Settings content will go here
-    }
-}
-
-@Composable
-fun BackButton(onClick: () -> Unit) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(48.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = LightGray,
-            contentColor = Beige
-        )
-    ) {
-        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
     }
 }

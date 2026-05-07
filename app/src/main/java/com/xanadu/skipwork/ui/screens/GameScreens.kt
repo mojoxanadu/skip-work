@@ -60,27 +60,3 @@ fun GameActiveScreen(onQuit: () -> Unit) {
         )
     }
 }
-
-@Composable
-fun StoreScreen(
-    credits: Int,
-    onHome: () -> Unit,
-    onContinue: () -> Unit
-) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = "Store",
-            color = Beige,
-            fontSize = 32.sp
-        )
-        Text(
-            text = "Credits: $credits",
-            color = Beige,
-            fontSize = 16.sp
-        )
-    }
-}

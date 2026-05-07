@@ -25,6 +25,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.xanadu.skipwork.R
+import com.xanadu.skipwork.ui.components.MenuButton
+import com.xanadu.skipwork.ui.components.BackButton
 import com.xanadu.skipwork.ui.theme.Beige
 import com.xanadu.skipwork.ui.theme.Black
 import com.xanadu.skipwork.ui.theme.LightGray
@@ -85,26 +87,6 @@ fun MainMenuScreen(
                 CreditButton(credits = credits, onClick = onStore)
             }
         )
-    }
-}
-
-@Composable
-fun MenuButton(
-    text: String,
-    onClick: () -> Unit,
-    isIcon: Boolean = false
-) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(48.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = LightGray,
-            contentColor = Beige
-        )
-    ) {
-        Text(text = text, fontSize = 14.sp)
     }
 }
 
