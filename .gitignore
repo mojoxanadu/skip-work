@@ -1,4 +1,6 @@
 .gradle/
+*.lock
+*.bin
 build/
 local.properties
 *.iml
